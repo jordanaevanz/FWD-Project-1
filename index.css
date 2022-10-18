@@ -1,23 +1,34 @@
   #square1 {
     height: 300px;
     width: 300px;
-  
+    background-color: transparent;
+    /* background-color: #fc0388; */
+    border: none;
+    padding: 5%;
   }
   #square2 {
     height: 300px;
     width: 300px;
-   
+    background-color: transparent;
+    /* background-color: #5ab5d6; */
+    border: none;
+    padding: 5%;
   }
   #square3 {
     height: 300px;
     width: 300px;
-  
+    background-color: transparent;
+    /* background-color:#8affab; */
+    border: none;
   }
   #square4 {
     height: 300px;
     width: 300px;
-  
+    background-color: transparent;
+    /* background-color: #9742ff; */
+    border: none;
   }
+
   .colorOptions{
   display: flex;
   justify-content: center;
@@ -28,7 +39,6 @@
   /* outline-color: black;
   outline-width: 12px; */
   outline: solid;
-
   height: 400px;
   width: 400px;
   display: flex;
@@ -37,13 +47,14 @@
   margin: 10%;
 }
 
-#sNum{
+.sNum{
   height: 20%;
   width: 20%;
-  background-color: transparent;
+  color: white;
+ background-color: transparent;
   border: none;
-  padding:5%;
-  font-size: 1.5rem;
+  padding:4%;
+  font-size: 2rem;
 }
 
 .numOptions{
@@ -61,3 +72,123 @@
   background-repeat: no-repeat;
   background-image: url("img/triangle.png");
 }
+
+/* got the blinking text from here https://stackoverflow.com/questions/16344354/how-to-make-blinking-flashing-text-with-css-3 */
+.blink {
+  padding-top: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  color: transparent;
+  /* i got the blur from here https://css-tricks.com/fun-with-blurred-text/ */
+  text-shadow: 0 0 .01rem rgba(255, 255, 255, 10);
+
+  animation: blinker 2s linear infinite;
+ /* color: white; */
+  font-family: 'Silkscreen', cursive;
+  font-size: 5rem;
+}
+@keyframes blinker {
+  50% {
+      opacity: 0;
+      color: transparent;
+      text-shadow: 0 0 1.2rem rgba(255, 255, 255, 100);
+  }
+}
+
+.blinkColor{
+  padding-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  color: transparent;
+  /* i got the blur from here https://css-tricks.com/fun-with-blurred-text/ */
+  text-shadow: 0 0 .01rem rgba(255, 255, 255, 10);
+  animation: Cblinker 3s linear infinite;
+ /* color: white; */
+  font-family: 'Silkscreen', cursive;
+  font-size: 3rem;
+}
+@keyframes Cblinker {
+  50% {
+      opacity: 0;
+      color: transparent;
+      text-shadow: 0 0 1rem rgba(255, 20, 255, 100);
+  }
+}
+
+
+#ball{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  width: 20%;
+}
+
+h1{
+  margin-left: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding-top: 2%;
+  padding-bottom: 5%;
+  font-size: 2.5rem;
+  font-family: 'Silkscreen', cursive;
+}
+
+h2{
+  margin-left: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding-top: 2%;
+  padding-bottom: 5%;
+  font-size: 2rem;
+  font-family: 'Silkscreen', cursive;
+}
+
+
+#restart{
+  padding-top: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-family: 'Silkscreen', cursive;
+  font-size:2rem;
+}
+
+
+body{
+  background-color: black;
+  cursor: url('smallBall.jpg') auto;
+}
+
+body{
+  background-color: black;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+}
+
+/* #circle{
+  position:absolute;
+  transform:translate(-50%,-50%);
+  height:35px;
+  width:35px;
+} */
