@@ -113,9 +113,10 @@ square_4.addEventListener('click', () => {
 //if its in the odd array and they pick an odd number, it changes to even
 
 
-num_1.addEventListener('click', () => {
+function numSelect1() {
+    console.log("here somehow 1")
     var count = 0;
-    console.log(num_1)
+    console.log("hello")
     headText.innerHTML = "Pick Another Number";
     //console.log(num_1.innerHTML)
     if (num_1.innerHTML == '7' || num_1.innerHTML == '5'){
@@ -133,13 +134,16 @@ num_1.addEventListener('click', () => {
             count++;
         }
     }
-    //console.log("HELLO THERE PEOPLE")
+
+    num_2.removeEventListener('click', numSelect2)
+    num_3.removeEventListener('click', numSelect3)
+    num_4.removeEventListener('click', numSelect4)
+    num_1.removeEventListener('click', numSelect1)
+
     num_1.addEventListener('click', () => {
-       // console.log("HELLO THERE PEOPLE")
         bigDiamond[0].style.display = "none";
         headText.innerHTML = "YOUR FORTUNE IS..."; 
         console.log(num_1.innerHTML);
-        console.log(fortunes[num_1.innerHTML]);
         headText2.innerHTML = fortunes[num_1.innerHTML];
         headText2.style.display = "flex";
         reset.style.display = "flex";
@@ -148,6 +152,7 @@ num_1.addEventListener('click', () => {
     num_2.addEventListener('click', () => {
         bigDiamond[0].style.display = "none";
         headText.innerHTML = "YOUR FORTUNE IS..."; 
+        console.log(num_2.innerHTML)
         headText2.innerHTML = fortunes[num_2.innerHTML];
         headText2.style.display = "flex";
          reset.style.display = "flex";
@@ -156,6 +161,7 @@ num_1.addEventListener('click', () => {
     num_3.addEventListener('click', () => {
         bigDiamond[0].style.display = "none";
         headText.innerHTML = "YOUR FORTUNE IS..."; 
+        console.log(num_3.innerHTML)
         headText2.innerHTML = fortunes[num_3.innerHTML];
         headText2.style.display = "flex";
         reset.style.display = "flex";
@@ -164,48 +170,52 @@ num_1.addEventListener('click', () => {
     num_4.addEventListener('click', () => {
         bigDiamond[0].style.display = "none";
         headText.innerHTML = "YOUR FORTUNE IS..."; 
+        console.log(num_4.innerHTML)
         headText2.innerHTML = fortunes[num_4.innerHTML];
         headText2.style.display = "flex";
         reset.style.display = "flex";
     });
+}
 
-});
+
+num_1.addEventListener('click', numSelect1);
 
 
-num_2.addEventListener('click', () => {
+function numSelect2() {
+    console.log("hello")
     var count = 0;
-    //using this so that the numbers values only change once
-    //and not again after the second number is chosen
-    var onlyOnce = true;
     headText.innerHTML = "Pick Another Number";
-
-    if (onlyOnce = true)
-    {
-        if (num_2.innerHTML == '7' || num_2.innerHTML == '5'){
-            for (const i of numbers){
-                i.innerHTML = evenN[count];
-                 console.log("please let me be wrong")
-                count++;
-                //resetting the ids with the most recent number choice or else the fortunes will be for the previous number
-            }
-            onlyOnce = false;
-            count = 0;
+    
+    // console.log(num.innerHTML)
+    if (num_2.innerHTML == '7' || num_2.innerHTML == '5'){
+        console.log("hi")
+        for (const i of numbers){
+            i.innerHTML = evenN[count];
+            //console.log(count)
+            count++;
         }
-
-        else if (num_2.innerHTML % 3 == 0 || num_2.innerHTML == '1') {
-        //console.log("hello")
-            for (const i of numbers){
-                i.innerHTML = oddN[count];
-            // console.log(i.innerHTML)
-                count++;
-            }
-            onlyOnce = false;
+        count = 0;
+    }
+    
+    else if (num_2.innerHTML % 3 == 0 || num_2.innerHTML == '1') {
+        console.log("sup")
+        for (const i of numbers){
+            i.innerHTML = oddN[count];
+          //  console.log(count)
+            count++;
         }
     }
-    console.log(onlyOnce)
+    //using this so that the numbers values only change once
+    //and not again after the second number is chosen
+    num_2.removeEventListener('click', numSelect2)
+    num_3.removeEventListener('click', numSelect3)
+    num_4.removeEventListener('click', numSelect4)
+    num_1.removeEventListener('click', numSelect1)
+
     num_1.addEventListener('click', () => {
+        //add a remove  event listener'
         bigDiamond[0].style.display = "none";
-        console.log(num_1.innerHTML + "THIS IS 2")
+        console.log(num_1.innerHTML)
         headText.innerHTML = "YOUR FORTUNE IS..."; 
         headText2.innerHTML = fortunes[num_1.innerHTML];
          headText2.style.display = "flex";
@@ -214,9 +224,9 @@ num_2.addEventListener('click', () => {
     
     console.log(num_2.innerHTML)
     num_2.addEventListener('click', () => {
-        console.log(num_2.innerHTML)
+        console.log("here we are")
         bigDiamond[0].style.display = "none";
-        console.log(num_2.innerHTML + "THIS IS 7")
+        console.log(num_2.innerHTML)
         headText.innerHTML = "YOUR FORTUNE IS..."; 
         headText2.innerHTML = fortunes[num_2.innerHTML];
         headText2.style.display = "flex";
@@ -226,7 +236,7 @@ num_2.addEventListener('click', () => {
     num_3.addEventListener('click', () => {
         bigDiamond[0].style.display = "none";
         headText.innerHTML = "YOUR FORTUNE IS..."; 
-        console.log(num_3.innerHTML + "THIS IS 5")
+        console.log(num_3.innerHTML)
         headText2.innerHTML = fortunes[num_3.innerHTML];
         headText2.style.display = "flex";
         reset.style.display = "flex";
@@ -237,19 +247,23 @@ num_2.addEventListener('click', () => {
         
         bigDiamond[0].style.display = "none";
         headText.innerHTML = "YOUR FORTUNE IS..."; 
-        console.log(num_4.innerHTML + "THIS IS 6")
+        console.log(num_4.innerHTML)
         headText2.innerHTML = fortunes[num_4.innerHTML];
         headText2.style.display = "flex";
         reset.style.display = "flex";
     });
+}
 
-});
+//make this into a function that the event listener calls
+num_2.addEventListener('click', numSelect2);
 
 
-num_3.addEventListener('click', () => {
+
+
+function numSelect3() {
     var count = 0;
     headText.innerHTML = "Pick Another Number";
-    // console.log(num.innerHTML)
+    console.log("here somehow 3")
     if (num_3.innerHTML == '7' || num_3.innerHTML == '5'){
         console.log("hi")
         for (const i of numbers){
@@ -266,11 +280,17 @@ num_3.addEventListener('click', () => {
             count++;
         }
     }
+    num_2.removeEventListener('click', numSelect2)
+    num_3.removeEventListener('click', numSelect3)
+    num_4.removeEventListener('click', numSelect4)
+    num_1.removeEventListener('click', numSelect1)
+
     //console.log("HELLO THERE PEOPLE")
     num_1.addEventListener('click', () => {
         console.log("1")
         bigDiamond[0].style.display = "none";
         headText.innerHTML = "YOUR FORTUNE IS..."; 
+        console.log(num_1.innerHTML)
         headText2.innerHTML = fortunes[num_1.innerHTML];
         headText2.style.display = "flex";
         reset.style.display = "flex";
@@ -279,6 +299,7 @@ num_3.addEventListener('click', () => {
     num_2.addEventListener('click', () => {
         console.log("2")
         bigDiamond[0].style.display = "none";
+        console.log(num_2.innerHTML)
         headText.innerHTML = "YOUR FORTUNE IS..."; 
         headText2.innerHTML = fortunes[num_2.innerHTML];
         headText2.style.display = "flex";
@@ -288,6 +309,7 @@ num_3.addEventListener('click', () => {
     num_3.addEventListener('click', () => {
         console.log("3")
         bigDiamond[0].style.display = "none";
+        console.log(num_3.innerHTML)
         headText.innerHTML = "YOUR FORTUNE IS..."; 
         headText2.innerHTML = fortunes[num_3.innerHTML];
         headText2.style.display = "flex";
@@ -297,15 +319,20 @@ num_3.addEventListener('click', () => {
     num_4.addEventListener('click', () => {
         console.log("4")
         bigDiamond[0].style.display = "none";
+        console.log(num_4.innerHTML)
         headText.innerHTML = "YOUR FORTUNE IS..."; 
         headText2.innerHTML = fortunes[num_4.innerHTML];
         headText2.style.display = "flex";
         reset.style.display = "flex";
     });
 
-});
+}
 
-num_4.addEventListener('click', () => {
+num_3.addEventListener('click', numSelect3);
+   
+
+function numSelect4() {
+    console.log("here somehow 4")
     var count = 0;
     headText.innerHTML = "Pick Another Number";
     if (num_4.innerHTML == '7' || num_4.innerHTML == '5'){
@@ -325,11 +352,17 @@ num_4.addEventListener('click', () => {
         }
     }
 
+    num_2.removeEventListener('click', numSelect2)
+    num_3.removeEventListener('click', numSelect3)
+    num_4.removeEventListener('click', numSelect4)
+    num_1.removeEventListener('click', numSelect1)
+
    // console.log("HELLO THERE PEOPLE")
     num_1.addEventListener('click', () => {
        // console.log("HELLO THERE PEOPLE")
         bigDiamond[0].style.display = "none";
         headText.innerHTML = "YOUR FORTUNE IS..."; 
+        console.log(num_1.innerHTML)
         headText2.innerHTML = fortunes[num_1.innerHTML];
         headText2.style.display = "flex";
         reset.style.display = "flex";
@@ -338,6 +371,7 @@ num_4.addEventListener('click', () => {
     num_2.addEventListener('click', () => {
         bigDiamond[0].style.display = "none";
         headText.innerHTML = "YOUR FORTUNE IS..."; 
+        console.log(num_2.innerHTML)
         headText2.innerHTML = fortunes[num_2.innerHTML];
         headText2.style.display = "flex";
         reset.style.display = "flex";
@@ -346,6 +380,7 @@ num_4.addEventListener('click', () => {
     num_3.addEventListener('click', () => {
         bigDiamond[0].style.display = "none";
         headText.innerHTML = "YOUR FORTUNE IS..."; 
+        console.log(num_3.innerHTML)
         headText2.innerHTML = fortunes[num_3.innerHTML];
         headText2.style.display = "flex";
         reset.style.display = "flex";
@@ -355,12 +390,17 @@ num_4.addEventListener('click', () => {
      
         bigDiamond[0].style.display = "none";
         headText.innerHTML = "YOUR FORTUNE IS..."; 
+        console.log(num_4.innerHTML)
         headText2.innerHTML = fortunes[num_4.innerHTML];
         headText2.style.display = "flex";
         reset.style.display = "flex";
     });
+}
 
-});
+
+num_4.addEventListener('click', numSelect4);
+
+
 
      
         
