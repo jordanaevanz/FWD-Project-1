@@ -25,15 +25,28 @@ const fortunes = ["", "happy news is on its way", "your intelligence is a virtue
 
 //5 is giving
 
-square_4.addEventListener('mouseenter', (event) => {
-   // console.log("hi");
+
+if (screen.width > 900)
+{
+    square_4.addEventListener('mouseenter', (event) => {
+        // console.log("hi");
+         headText.innerHTML = "Pick A Color";
+        // console.log("hi");
+         square_1.style.backgroundColor = "red"
+         square_2.style.backgroundColor = "#5ab5d6"
+         square_3.style.backgroundColor = "#8affab"
+         square_4.style.backgroundColor = "#9742ff"
+      });
+}
+else {
     headText.innerHTML = "Pick A Color";
-   // console.log("hi");
-    square_1.style.backgroundColor = "red"
-    square_2.style.backgroundColor = "#5ab5d6"
-    square_3.style.backgroundColor = "#8affab"
-    square_4.style.backgroundColor = "#9742ff"
- });
+        // console.log("hi");
+         square_1.style.backgroundColor = "red"
+         square_2.style.backgroundColor = "#5ab5d6"
+         square_3.style.backgroundColor = "#8affab"
+         square_4.style.backgroundColor = "#9742ff"
+}
+
 
 square_1.addEventListener('click', () => {
     // red
